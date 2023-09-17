@@ -1,31 +1,12 @@
-import math                     # needed in Step #3
+import math
+wall_height = float(input('Enter wall height (feet):\n'))
+wall_width = float (input('Enter wall width (feet):\n'))
+wall_area = float(wall_height * wall_width)
 
-wall_height = float(input())
-wall_width = float(input())
-cost_paint = float(input())
+print('Wall area:','{:.2f}'.format(wall_area),'square feet')
 
-wall_area = wall_height * wall_width
-wall_area = float(f'{wall_area:.1f}')
-print('Wall area:',wall_area,'sq ft')
+paint_needed = float(wall_area/350)
+print('Paint needed:', '{:.2f}'.format(paint_needed), 'gallons')
 
-quant_paint = float(wall_area/350)
-quant_paint = float(f'{quant_paint:.3f}')
-
-print('Paint needed:',quant_paint,'gallons')
-
-#calculating the cans needed, use ceil()
-cans = math.ceil(quant_paint)
+cans = math.ceil(paint_needed)
 print('Cans needed:',cans,'can(s)')
-
-#Calculating the price including sales tax of 7%
-cost_paint = cost_paint * cans
-print('Paint cost:',f'${cost_paint:.2f}')
-
-sales_tax = float(cost_paint * 0.07)
-print('Sales tax:', f'${sales_tax:.2f}')
-
-total_cost = cost_paint + sales_tax
-print('Total cost:',f'${total_cost:.2f}')
-
-
-

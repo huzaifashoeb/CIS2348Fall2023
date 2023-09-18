@@ -1,3 +1,5 @@
+#Student Name: Huzaifa Shoeb, ID:1925670
+
 lemon_juice_cups = float(input('Enter amount of lemon juice (in cups):\n'))
 
 water_cups = float(input('Enter amount of water (in cups):\n'))

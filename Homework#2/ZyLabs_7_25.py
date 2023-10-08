@@ -11,3 +11,9 @@ pennies = amount % 100 % 25 % 10 % 5 // 1
 if amount <= 0:
     print("No change")
   
+if dollars > 1:
+    print(str(dollars) + " Dollars")
+elif dollars == 1:
+    print(str(dollars) + " Dollar")
+else:
+    pass

@@ -13,7 +13,7 @@ for x in range(-10, 10):
     for y in range(-10, 10):
         if (a * x) + (b * y) == c and (d * x) + (e * y) == f:
             check = True
-            print(x,y)
+            print(x, y)
 
-if check == False:
+if not check:
     print('No solution')

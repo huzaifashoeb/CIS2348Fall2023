@@ -1,6 +1,6 @@
 #Name: Huzaifa Shoeb, ID: 1925670
-import re
 
+import re
 months = {
     "January": 1,
     "February": 2,
@@ -20,7 +20,7 @@ yourdate = input()
 for data in [yourdate, -1]:
     if data == -1:
         break
-    if re.match(r'(\w+) (\d{1,2}), (\d{4})', data) is None:
+    elif re.match(r'(\w+) (\d{1,2}), (\d{4})', data) is None:
         continue
     output = data.split(" ")
     output[0] = str(months[output[0]])

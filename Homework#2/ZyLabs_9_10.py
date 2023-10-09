@@ -2,17 +2,15 @@
 
 import csv
 
-file = input()
-
-with open(file, 'r') as wordsfile:
-    words_reader = csv.reader(wordsfile)
-    for row in words_reader:
-        words_list = row
-
-        no_duplicates = list(dict.fromkeys(words_list))
-        list_length = len(no_duplicates)
-
-        for i in range(list_length):
-            print(no_duplicates[i], words_list.count(no_duplicates[i]))
-            list[i], words_list.count(no_duplicates[i])
-
+name = input()
+with open(name, 'r') as file:
+    Reader = csv.reader(file, delimiter=',')
+    words = dict()
+    for i in Reader:
+        for x in i:
+            if x in words:
+                words[x] = words[x] + 1
+            else:
+                words[x] = 1
+    for n in list(words.keys()):
+        print("{} {}".format(n, words[n]))

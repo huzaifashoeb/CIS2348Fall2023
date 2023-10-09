@@ -1,6 +1,6 @@
 #Name: Huzaifa Shoeb, ID: 1925670
-
 import re
+
 months = {
     "January": 1,
     "February": 2,
@@ -16,8 +16,12 @@ months = {
     "December": 12,
 }
 
-yourdate = input()
-for data in [yourdate, -1]:
+input_file = open('inputDates.txt', 'r')
+
+# yourdate = input() [Was using this line for part a of Homework
+# Changed [yourdate, -1] to [input_file, -1] for part b.
+
+for data in [input_file, -1]:
     if data == -1:
         break
     elif re.match(r'(\w+) (\d{1,2}), (\d{4})', data) is None:
@@ -26,3 +30,4 @@ for data in [yourdate, -1]:
     output[0] = str(months[output[0]])
     output[1] = output[1].replace(",", "")
     print("/".join(output))
+input_file.close()

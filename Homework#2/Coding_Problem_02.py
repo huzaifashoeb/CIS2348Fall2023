@@ -1,4 +1,4 @@
-#Name: Huzaifa Shoeb, ID: 1925670
+# Name: Huzaifa Shoeb, ID: 1925670
 import re
 
 months = {
@@ -17,6 +17,7 @@ months = {
 }
 
 input_file = open('inputDates.txt', 'r')
+output_file = open('parsedDates.txt', 'w')
 
 # yourdate = input() [Was using this line for part a of Homework
 # Changed [yourdate, -1] to [input_file, -1] for part b.
@@ -29,5 +30,9 @@ for data in [input_file, -1]:
     output = data.split(" ")
     output[0] = str(months[output[0]])
     output[1] = output[1].replace(",", "")
-    print("/".join(output))
+    result = "/".join(output)
+    print(result)
+    output_file.write(result)
+    output_file.write('\n')
+output_file.close()
 input_file.close()

@@ -14,3 +14,17 @@ Months = {
   "October": 10,
   "November": 11,
   "December": 12}
+
+# Let's import the 're' module in here
+
+import re
+mydate = input()
+for data in [mydate, -1]
+  if data == -1:
+    break
+  if re.match(r'(\w+) (\d{1,2}), (\d{4})', data) == None:
+    continue
+  output = data.split(" ")
+  output [0] = str(Months[output[0]])
+  output [1] = output[1].replace(",", "")
+  print("/".join(output))

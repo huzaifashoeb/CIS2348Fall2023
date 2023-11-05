@@ -1,3 +1,5 @@
+# Name: Huzaifa Shoeb, ID: 1925670
+
 class ItemToPurchase:
 
     def __init__(self):

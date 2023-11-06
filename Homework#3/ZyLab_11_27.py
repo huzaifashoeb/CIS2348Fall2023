@@ -1,3 +1,5 @@
+# Name: Huzaifa Shoeb, ID: 1925670
+
 def print_roster(roster_use):
     print("ROSTER")
     for jersey_use, rating_use in sorted(roster_use.items()):

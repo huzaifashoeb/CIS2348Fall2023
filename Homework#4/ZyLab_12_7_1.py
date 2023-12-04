@@ -1,12 +1,16 @@
-def get_age():
-    age = int(input())
-    if age < 18 or age > 75:
-        raise ValueError("Invalid age.")
-    return age
+# Name: Huzaifa Shoeb, ID: 1925670
 
-def fat_burning_heart_rate(age):
-    heart_rate = 0.7 * (220 - age)
-    return heart_rate
+def get_age():
+    age_use = int(input())
+    if age_use < 18 or age_use > 75:
+        raise ValueError("Invalid age.")
+    return age_use
+
+
+def fat_burning_heart_rate(age_use):
+    heart_rate_use = 0.7 * (220 - age_use)
+    return heart_rate_use
+
 
 if __name__ == "__main__":
     try:

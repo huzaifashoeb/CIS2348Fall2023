@@ -2,6 +2,7 @@
 # Final Project Part 2
 import csv
 
+
 # Define the functions and class
 
 
@@ -25,6 +26,7 @@ class GraduationRecord:
         self.student_id = student_id
         self.graduation_date = graduation_date
 
+
 # function for reading the csv files
 
 
@@ -37,6 +39,7 @@ def read_csv(file_path, class_type):
             records.append(class_type(*row))
     return records
 
+
 # Some sort functions for the inputs as needed
 
 
@@ -47,17 +50,22 @@ def key_for_sorting(student):
 # Function to find the desired students
 def find_students(major, gpa, students, gpas, graduations):
     valid_majors = set(student.major for student in students)
-    if major not in valid_majors or ',' in major or ',' in gpa:
-        print("No such student")
+
+    if ',' in major or ',' in gpa:
+        print("Invalid input: Major and GPA cannot contain commas.")
         return
 
-    try:
-        gpa = float(gpa)
-    except ValueError:
-        print("No such student")
+    if major not in valid_majors:
+        print("No such major")
         return
 
-# List to store the matching students data
+    if not gpa.replace('.', '', 1).isdigit():
+        print("Invalid GPA format. Please enter a valid numeric GPA.")
+        return
+
+    gpa = float(gpa)
+
+    # List to store the matching students data
     matching_students = []
     for student in students:
         if student.major == major and not student.disciplinary_action:
@@ -70,7 +78,7 @@ def find_students(major, gpa, students, gpas, graduations):
                                       abs(float(gpas_dict[student.student_id].gpa) - gpa) <= 0.1]
     matching_students_within_range.sort(key=key_for_sorting)
 
-# FInd which students are in the desired matching range
+    # Find which students are in the desired matching range
     if matching_students_within_range:
         print("Your student(s):")
         for student in matching_students_within_range:
